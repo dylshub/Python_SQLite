@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS alumnos(
 #GUARDAR LOS CAMBIOS CERRAR 
 
 conexion.commit()
+#conexion.close()
 
 print("BASE DE DATOS Y TABLA CREADA CORRECTAMENTE")
 
