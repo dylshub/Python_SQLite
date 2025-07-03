@@ -59,8 +59,12 @@ correoIngresado = input("Ingrese su correo ")
 carreraIngresada = input("Ingrese su carrera ")
 gradoIngresado = input("Ingrese su grado ")
 domicilioIngresado = input("Ingrese su domicilio ")
-cursor.execute("UPDATE alumnos SET  (?, ?, ?, ?, ?, ?) where id = (?)",(nombreIngresado, apellidoIngresado, correoIngresado, carreraIngresada, gradoIngresado, domicilioIngresado) ,(IdActualizar) )
-print("USUARIO ACTUALIZADO")
+cursor.execute("""
+    UPDATE alumnos 
+    SET nombre = ?, apellido = ?, correo = ?, carrera = ?, grado = ?, domicilio = ?
+    WHERE id = ?
+""", (nombreIngresado, apellidoIngresado, correoIngresado, carreraIngresada, gradoIngresado, domicilioIngresado, IdActualizar))
+
 
 #ELIMINAR USUARIO
 print("___________________________________________________")
