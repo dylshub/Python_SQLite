@@ -25,9 +25,9 @@ def add():
 
     # Frame central
     frame = tk.Frame(windowadd, background=COLOR_FRAME, padx=40, pady=40)
-    frame.place(relx=0.5, rely=0.5, anchor="center")
+    frame.place(relx=0.5, rely=0.5, anchor="center", relwidth=0.8, relheight=0.8)
 
-    # Etiqueta de bienvenida
+    # Etiqueta main
     etiqueta = tk.Label(
     frame,
     text="RELLENE LOS CAMPOS",
@@ -35,17 +35,17 @@ def add():
     bg=COLOR_FRAME,
     font=("Segoe UI Semibold", 16)
         )
-    etiqueta.pack(pady=(0, 0))
+    etiqueta.place(relx = 0.5, rely=0.05, anchor = "center")
 
     # Etiqueta de NOMBRE
     lblName = tk.Label(
-    frame,
-    text="NOMBRE:",
-    fg=COLOR_TEXTO,
-    bg=COLOR_FRAME,
-    font=("Segoe UI Semibold", 16)
-        )
-    lblName.pack(pady=(0, 0))
+        frame,
+        text="NOMBRE:",
+        fg=COLOR_TEXTO,
+        bg=COLOR_FRAME,
+        font=("Segoe UI Semibold", 16)
+    )
+    lblName.place(relx = 0.1, rely=0.25)
 
     #Entrada: nombre
     txtName =tk.Entry(
@@ -54,12 +54,44 @@ def add():
         font=("Segoe UI Semibold", 14)
 
     )
-    txtName.pack(pady=(30,25))
+    txtName.place(relx = 0.4, rely=0.25)
 
-    # Botón 1: Agregar estudiante
+    # Etiqueta de APELLIDO
+    lblLastName = tk.Label(
+        frame,
+        text="Apellido:",
+        fg=COLOR_TEXTO,
+        bg=COLOR_FRAME,
+        font=("Segoe UI Semibold", 16)
+    )
+    lblLastName.place(relx = 0.1, rely=0.37)
+
+    #Entrada: Apellido
+    txtName =tk.Entry(
+        frame,
+        fg=COLOR_TEXTO,
+        font=("Segoe UI Semibold", 14)
+
+    )
+    txtName.place(relx = 0.4, rely=0.37)
+
+    # Etiqueta GRADO
+    etiqueta = tk.Label(
+        frame,
+        text="GRADO: ",
+        fg=COLOR_TEXTO,
+        bg=COLOR_FRAME,
+        font=("Segoe UI Semibold", 16)
+        )
+    etiqueta.place(relx = 0.5, rely=0.05, anchor = "center")
+
+    #GRADOS
+    cuarto = tk.Radiobutton(frame, text = "Cuarto")
+
+    # Botón 1: Guardar
     boton1 = tk.Button(
         frame,
-        text="➕  AGREGAR ESTUDIANTE",
+        text="GUARDAR ESTUDIANTE",
         fg=COLOR_TEXTO_BOTON,
         bg=COLOR_BOTON,
         font=FUENTE,
@@ -70,7 +102,7 @@ def add():
         borderwidth=0,
         command = add
     )
-    boton1.pack(pady=10, fill="x")
+    boton1.place(relx = 0.1, rely=0.90)
 
 
 
